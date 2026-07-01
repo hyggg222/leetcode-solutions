@@ -63,3 +63,4 @@ class Solution:
 # Result: AC
 # Time Complexity: O(n)
 
+# insight: using function "enumrate()" can help u take out the index n value in a list
