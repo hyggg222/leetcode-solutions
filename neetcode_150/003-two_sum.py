@@ -28,17 +28,25 @@ class Solution:
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        arr = nums
+        arr = []
+        for i, num in enumerate(nums):
+            arr.append([num, i])
+        
         arr.sort()
-        i = 0
-        j = len(arr) - 1
+        i, j = 0, len(arr) - 1
         while i < j:
-            if (arr[i] + arr[j] == target):
-                return [i, j]
-            elif (arr[i] + arr[j] < taget):
+            Sum = arr[i][0] + arr[j][0]
+            if (Sum == target):
+                return [min(arr[i][1], arr[j][1]), max(arr[i][1], arr[j][1])]
+            elif (Sum < target):
                 i += 1
             else:
                 j -= 1
+        return []
+
+# Time Complexity: O(nlogn)
+
+
 # More optimal Approach: Using a hash map
 
 import bisect
@@ -46,10 +54,12 @@ import bisect
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         dct = {}
-        for i in range(nums):
-            if (dct.get(target - nums[i], -1) != -1):
-                return [dct[target - nums[i]], i]
-            dct[nums[i]] = i
+        for i, num in enumerate(nums):
+            diff = target - num
+            if diff in dct:
+                return [dct[diff], i]
+            dct[num] = i
 
 # Result: AC
 # Time Complexity: O(n)
+
