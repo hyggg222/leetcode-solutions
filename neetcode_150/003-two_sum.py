@@ -35,8 +35,10 @@ class Solution:
         while i < j:
             if (arr[i] + arr[j] == target):
                 return [i, j]
-            elif   :
-    
+            elif (arr[i] + arr[j] < taget):
+                i += 1
+            else:
+                j -= 1
 # More optimal Approach: Using a hash map
 
 import bisect
