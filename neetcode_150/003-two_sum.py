@@ -22,3 +22,17 @@ class Solution:
 # Result: AC
 # Time Complexity: O(n^2)
 
+# More optimal Approach: Using a hash map
+
+import bisect
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        dct = {}
+        for i in range(nums):
+            if (dct.get(target - nums[i], -1) != -1):
+                return [dct[target - nums[i]], i]
+            dct[nums[i]] = i
+
+# Result: AC
+# Time Complexity: O(n)
