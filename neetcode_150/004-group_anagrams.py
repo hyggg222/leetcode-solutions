@@ -60,7 +60,8 @@ class Solution:
         return ans
 # Time complexity: O(nklogk)
 
-# Using a hash map: <key>: dict of frequency of character - <value>: list of strings
+# Another approach: Using tuple
+# Using a hash map: <key>: tuple of dict of frequency of character - <value>: list of strings
 
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
