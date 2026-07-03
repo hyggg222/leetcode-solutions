@@ -22,5 +22,25 @@ class Solution:
         return ans
 
 # Time Complexity: O(nlogn)
-        
 
+# More optimal approach: Using a Min Heap
+
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        freq = {}
+        for num in nums:
+            freq[num] = freq.get(num, 0) + 1
+        
+        heap = []
+        for key, value in freq.items():
+            heapq.heappush(heap, (value, key))
+            if (len(heap) > k):
+                heapq.heappop(heap)
+                
+        ans = []
+        for i in range(k):
+            ans.append(heapq.heappop(heap)[1])
+        return ans
+
+# Time Complexity: O(N * LogK)
+        
