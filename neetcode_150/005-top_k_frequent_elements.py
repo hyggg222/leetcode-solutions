@@ -20,5 +20,7 @@ class Solution:
         for i in range(0, min(k, len(ls))):
             ans.append(ls[i][1])
         return ans
+
+# Time Complexity: O(nlogn)
         
 
