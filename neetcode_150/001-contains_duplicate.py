@@ -28,7 +28,7 @@ class Solution:
 # Approach 2 - Use a data structure that can automatically check duplicate
 # Ill use a set for simple. Set is a data structure that only store distinct value
 # So if I convert an array into set -> Duplicate values will be decreased to 1 -> array's len change
-# so if the orginal length of n array if diff from its set version' len -> it contains duplicate -> return true
+# so if the orginal length of an array is diff from its set version' len -> it contains duplicate -> return true
 
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
