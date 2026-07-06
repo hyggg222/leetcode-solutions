@@ -22,11 +22,10 @@ class Solution:
         return True
     
     def isValidSqu(self, x: int, y: int) -> bool:
-        xx = x // 3
-        yy = y // 3
-        if (self.board[x][y] in self.ls_squ[(xx, yy)]):
+        val = (x//3)*3 + (y//3)
+        if (self.board[x][y] in self.ls_squ[val]):
             return False
-        self.ls_squ[(xx, yy)].add(self.board[x][y])
+        self.ls_squ[val].add(self.board[x][y])
         return True
 
     def isValidSudoku(self, board: List[List[str]]) -> bool:
