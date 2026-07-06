@@ -60,7 +60,7 @@ class Solution:
         return ans
 # Time complexity: O(nklogk)
 
-# Another approach: Using tuple
+# Another approach: Hash Table using dict
 # Using a hash map: <key>: tuple of dict of frequency of character - <value>: list of strings
 
 class Solution:
@@ -78,7 +78,19 @@ class Solution:
 
 
 # Time complexity: O(nk)
-#
+# Slightly More Optimal Approach:
+
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        ans = {}
+        for Str in strs:
+            ls = [0] * 26
+            for char in Str:
+                ls[ord(char) - ord('a')] += 1
+            hashVal = tuple(ls)
+            ans[hashVal] = ans.get(hashVal, []).append(s)
+        return ans
+                
 
 
         
