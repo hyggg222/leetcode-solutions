@@ -64,9 +64,23 @@ class Solution:
         
         return ans
     
-# Another Solution:
+# Another Solution: Using hash table
+# There are just three ways possible to add a number to form a sequence: head, in the middle (only one), tail
+# Therefore we just have to save the updated value of these positions
 
-                
+class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:         
+        dct = collections.defaultdict(int)
+        ans = 0
+
+        for num in nums:
+            if not dct[num]:
+                dct[num] = dct[num - 1] + dct[num + 1] + 1
+                dct[num - dct[num - 1]] = dct[num]
+                dct[num + dct[num + 1]] = dct[num]
+                ans = max(ans, dct[num])
+
+        return ans  
 
 
             
