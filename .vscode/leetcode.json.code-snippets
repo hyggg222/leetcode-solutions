@@ -1,0 +1,13 @@
+{
+  "LeetCode Template": {
+    "prefix": "lc",
+    "body": [
+      "# Problem: $1",
+      "# Difficulty: $2",
+      "# Link NeetCode: $3",
+	  "# Link LeetCode: $4",
+      "",
+      "$0"
+    ]
+  }
+}
